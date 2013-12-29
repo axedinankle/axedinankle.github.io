@@ -1,0 +1,38 @@
+// ==========================================================================
+//  Header modules
+// ==========================================================================
+
+// BASE
+// -----------------------------------------------------------------------------
+
+[role="banner"], .header {
+	
+}
+
+// SUBMODULES
+// -----------------------------------------------------------------------------
+
+[role="banner"].main {
+	@include base-grid-margins;
+	position: absolute;
+	width: 100%;
+	left: 0;
+	top: 0;
+	right: 0;
+	z-index: $z--high;
+	height: $l-header-h;
+	border-top: $border-w--thick solid $color-border--dark;
+	text-align: center;
+}
+
+#work [role="banner"].main {
+	border-top-color: $color--border--light;
+}
+
+.main-logo {
+	@extend %base-a-hidden;
+	@include rem(margin, 12px 0 0 -30.5px);
+	display: block;
+	left: 50%;
+	position: absolute;
+}

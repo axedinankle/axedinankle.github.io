@@ -1,0 +1,41 @@
+---
+layout: default
+title: Work
+---
+
+<div class="hero">
+	<hgroup class="wrapper">
+	  <h1 class="hero-name"><strong>Andrew Perry</strong> Blacksmithing, Engineering <span class="amp">&amp;</span> Historical Miscellany</h1>
+	</hgroup>
+</div>
+
+<main role="main">
+  
+	<nav role="navigation" class="local">
+		<ul>
+      <li><a href="#" class="local-item active">Show all</a></li>
+      {% for category in site.categories %}
+      {% unless category contains 'blog' or category contains 'work' %}
+      <li><a href="#" class="local-item">{{ category | first }}</a></li>
+      {% endunless %}
+      {% endfor %}
+		</ul>
+	</nav>
+  
+	<ul class="grid">
+    {% for post in site.categories.work %}
+
+    {% capture cat_list %}{% for cat in post.categories %}{% unless cat contains 'work' %}{{ cat }}{% unless forloop.last %} {% endunless %}{% endunless %}{% endfor %}{% endcapture %}
+    <li class="tile" data-categories="{{ cat_list }}">
+      <a href="{{ site.baseurl }}{{ post.url }}" class="tile-thumb">
+        {% if post.thumb %}
+        <img src="{{ post.thumb }}" alt="{{ post.title }}" />
+        {% endif %}
+      </a>
+      <h2 class="tile-name"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h2>
+      <h6><time datetime="{{ post.date }}">{{ post.date | date: "%m.%y" }}</time></h6>
+    </li>
+
+    {% endfor %}
+	</ul>
+</main>

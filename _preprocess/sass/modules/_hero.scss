@@ -1,0 +1,32 @@
+// ==========================================================================
+//  Hero modules
+// ==========================================================================
+
+// BASE
+// -----------------------------------------------------------------------------
+
+.hero {
+	@extend %theme-dark;
+	@include rem(padding, $l-header-h 0 30px 0);
+	position: relative;
+	top: 0;
+	overflow: auto;
+	text-align: center;
+}
+
+// SUBMODULES
+// -----------------------------------------------------------------------------
+
+.hero-name {
+  @include merriweather(light);
+  @include rem(font-size, 21px);
+  @include rem(margin-top, 18px);
+  line-height: 1.4;
+
+  strong {
+    $space: 1em;
+    padding-right: ($space/2);
+    margin-right: ($space/2);
+    border-right: $border-w--thin solid lighten($color-bg--dark, 15);
+  }
+}

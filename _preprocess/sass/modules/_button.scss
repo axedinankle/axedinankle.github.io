@@ -1,0 +1,21 @@
+// Buttons
+// ----------------------------------------------------------------------------
+
+.button {
+  @extend %base-a-hidden;
+}
+
+.button.read_more {
+  @include open-sans;
+  @include rem(font-size, 12px);
+  padding: em(3px) em(14px);
+  color: white;
+  background: $color-highlight;
+  border-radius: 100px;
+  text-transform: uppercase;
+
+  &:hover, &:active {
+    @include base-transition;
+    background: darken($color-highlight, 5);
+  }
+}

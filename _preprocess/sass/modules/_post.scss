@@ -1,0 +1,95 @@
+// ==========================================================================
+//  Blog post modules
+// ==========================================================================
+
+
+// BASE
+// -----------------------------------------------------------------------------
+
+.posts {
+	@extend %list-unstyled;
+}
+
+.post {
+
+	h2 {
+    color: $color-accent;
+  }
+
+  & > time {
+    @extend %post-date;
+  }
+
+  p img {
+    display: block;
+    margin: 0 auto;
+
+    &:after {
+      content: attr(title);
+      display: block;
+      font-size: 12px;
+    }
+  }
+}
+
+// SUBMODULES
+// -----------------------------------------------------------------------------
+
+// ------- Excerpted post -------------------------------------------
+
+.post.excerpt {
+	@include rem(margin, 24px 0);
+  @include rem(padding, 24px 0);
+  border-bottom: $border-w--thin solid $color-accent;
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+%post-date {
+  $w: 60px;
+  $offset: $w + 24px;
+  @include merriweather($style: italic);
+  @include rem(padding, 2px 0);
+  @include rem(font-size, 14px);
+  @include rem(margin, 16px 0 0 -#{$offset});
+  @include rem(width, $w);
+  display: block;
+  float: left;
+  color: $color-highlight;
+  text-align: center;
+}
+
+
+// ------- Full-length post -------------------------------------------
+
+.post.full {
+  @extend %narrow;
+
+  p:first-child {
+    @include rem(font-size, 21px);
+    color: red;
+  }
+}
+
+.post-meta {
+  color: $color-accent;
+
+  dt, dd {
+    @include inline-block;
+    @include rem(font-size, 12px);
+    @include rem(margin-right, 6px);
+    margin-top: 0;
+    margin-left: 0;
+    text-transform: uppercase;
+  }
+
+  dt {
+    @include open-sans(bold);
+  }
+
+  dd {
+    @include open-sans;
+  }
+}

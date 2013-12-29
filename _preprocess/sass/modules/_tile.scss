@@ -1,0 +1,43 @@
+// ==========================================================================
+//  Tile modules
+// ==========================================================================
+
+// BASE
+// -----------------------------------------------------------------------------
+
+.tile {
+	@include inline-block;
+	@include rem(margin-left, -5px);
+	width: column-span(6, 1);
+	padding: (gutter-span()/2);
+  
+  & > .tile-name {
+    margin-top: 0.3em;
+  }
+
+	&:nth-child(3n + 1) {
+		margin-left: 0;
+	}
+	
+	@include breakpoint($xsmall) {
+		width: column-span(3, 1);
+	}
+
+	@include breakpoint($small) {
+		width: column-span(3, 1);
+	}
+
+	@include breakpoint($medium) {
+		width: column-span(4, 1);
+	}
+}
+
+// SUBMODULES
+// -----------------------------------------------------------------------------
+
+.js .tile-thumb {
+  display: block;
+  // @include rem(height, 200px);
+  // display: block;
+  overflow: hidden;
+}

@@ -1,0 +1,26 @@
+// ==========================================================================
+//  Footer modules
+// ==========================================================================
+
+// BASE
+// -----------------------------------------------------------------------------
+
+footer, .footer {
+  @extend %theme-dark;
+	@include base-grid-margins;
+  @include rem(padding-top, 18px);
+  @include rem(padding-bottom, 18px);
+  @include rem(margin-top, 36px);
+  @include open-sans(light);
+
+  small {
+    @include rem(font-size, 12px);
+    color: darken($color-accent, 10);
+  }
+}
+
+
+// SUBMODULES
+// -----------------------------------------------------------------------------
+
+

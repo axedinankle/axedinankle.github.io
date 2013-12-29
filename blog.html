@@ -1,0 +1,20 @@
+---
+layout: default
+title: Thinking
+---
+
+<main role="main" class="narrow">
+	<ul class="posts">
+		{% for post in site.categories.blog %}
+		<li class="post excerpt">
+			{% if post.subtitle %}<hgroup>{% endif %}
+				<h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
+				{% if post.subtitle %}<h2><a href="{{ site.baseurl }}{{ post.url }}">{{ post.subtitle }}</a></h2>{% endif %}
+			{% if post.subtitle %}</hgroup>{% endif %}
+			<time datetime="{{ post.date }}">{{ post.date | date: "%m.%d.%y" }}</time>
+			{{ post.excerpt }}
+			<a href="{{ site.baseurl }}{{ post.url }}" class="button read_more">read more <span class="button carrot">&rsaquo;</span></a>
+		</li>
+		{% endfor %}
+	</ul>
+</main>

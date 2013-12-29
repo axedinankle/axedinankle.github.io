@@ -1,0 +1,61 @@
+// ==============================================================================
+// Global layout styles
+// ==============================================================================
+
+html {
+	font-size: 100%;
+	
+	@include breakpoint($small) {
+		font-size: 112%;
+	}
+
+	@include breakpoint($medium) {
+		font-size: 118%;
+	}
+
+	@include breakpoint($large) {
+		font-size: 125%;
+	}
+}
+
+body {
+	@include rem(padding-top, $l-header-h);
+
+	&#work {
+		padding-top: 0;
+	}
+}
+
+[role="main"], .wrapper {
+	@include base-grid-margins;
+	max-width: 1280px;
+	margin: 0 auto;
+}
+
+	.narrow, %narrow {
+		@include base-grid-margins;
+		max-width: 848px;
+		margin: 0 auto;
+		// padding: 0 $grid-gutter;
+	}
+
+%has-nested_columns {
+	padding: 0 -(gutter-span()/2);
+}
+
+%list-unstyled {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.grid {
+	list-style: none;
+	margin: 0;
+	padding: (gutter-span()/2);
+	clear: both;
+
+	@include breakpoint($large) {
+		padding: (gutter-span()/2) 0;
+	}
+}

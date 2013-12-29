@@ -1,0 +1,2 @@
+{% if site.categories.size > 3 %}
+{% endif %}

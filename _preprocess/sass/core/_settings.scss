@@ -1,0 +1,84 @@
+// ==========================================================================
+//  Global settings
+// ==========================================================================
+
+$path-images: "../images/";
+
+$base-duration: 0.5; // in seconds
+$base-radius: 5px; // rounded corners
+
+@mixin base-transition {
+  @include animation(all $base-duration);
+}
+
+// Colors
+// --------------------------------------------------------------------------
+
+$gold: #bfab7c;
+$beige: #9e9783;
+$gray: #7c7976;
+$black: #292826;
+
+// text
+$color-text--primary: $black;
+$color-text--secondary: $gray;
+
+// general
+$color-accent: $beige;
+$color-highlight: $gold;
+
+$color-selection: red;
+
+$color-bg--dark: $black;
+$color-bg--light: white;
+
+$color-border--dark: $black;
+$color--border--light: lighten($black, 10);
+
+
+// Typography
+// --------------------------------------------------------------------------
+
+$type-sizes: 16px, 20px, 22px, 24px;
+$type-size--default: nth($type-sizes, 1);
+$type-line_height: 1.5;
+
+
+// Containers/layout
+// --------------------------------------------------------------------------
+$l-header-h: 95px;
+
+$border-w--thick: 8px;
+$border-w--thin: 1px;
+
+$body-margins: 18px 24px 48px;
+
+// --- breakpoints ----------------------------------------------------------
+// $breakpoints: 30em, 48em, 80em, 90em;
+
+$xsmall: 30em; //nth($breakpoints, 1);
+$small: 48em; //nth($breakpoints, 2);
+$medium: 80em; //nth($breakpoints, 3);
+$large: 90em; //nth($breakpoints, 4);
+
+
+// --- grid variables -------------------------------------------------------
+$grid-gutter: 1em; // convert to rem/em/percent
+
+$grid-columns: 6, 9, 12;
+
+// Singularity.gs setup
+// -> https://github.com/Team-Sass/Singularity
+$grids: nth($grid-columns, 1);
+$grids: add-grid(nth($grid-columns, 2) at $small);
+$grids: add-grid(nth($grid-columns, 3) at $medium);
+
+$gutters: $grid-gutter;
+
+$output: 'isolation';
+
+
+// --- default z-indexes ----------------------------------------------------
+$z--low: 0;
+$z--med: 1;
+$z--high: 2;
