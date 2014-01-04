@@ -1,6 +1,6 @@
 name: Andrew Perry
 url: http://andrewperry.us
-baseurl: /
+baseurl: 
 
 markdown: redcarpet
 redcarpet:
