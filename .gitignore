@@ -1,5 +1,4 @@
 _site/
-codekit-config.json
 *.sublime-project
 *.sublime-workspace
 .sass-cache/

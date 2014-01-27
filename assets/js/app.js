@@ -120,6 +120,13 @@ jQuery(function($) {
     andrewperry.equalHeight($(".tile-thumb img"));
   });
 
+  $(document).ready(function() {  
+    // fade in each image individually as it's downloaded  
+    $('img').load(function() {  
+        $(this).fadeIn('slow');  
+    });  
+}); 
+
   $(window).resize(function() {
     andrewperry.equalHeight($(".tile-thumb img"));
   });
