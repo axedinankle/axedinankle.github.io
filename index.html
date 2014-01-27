@@ -11,6 +11,8 @@ title: Work
 
 <main role="main">
   
+  {% comment %} only show if more than 3 categories: work, blog, [medium] {% endcomment %}
+  {% if site.categories.size > 3 %}
 	<nav role="navigation" class="local">
 		<ul>
       <li><a href="#" class="local-item active">Show all</a></li>
@@ -21,6 +23,7 @@ title: Work
       {% endfor %}
 		</ul>
 	</nav>
+  {% endif %}
   
 	<ul class="grid">
     {% for post in site.categories.work %}
