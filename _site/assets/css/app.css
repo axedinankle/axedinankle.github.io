@@ -1738,4 +1738,6 @@ footer small, .footer small {
 .js .tile-thumb {
   display: block;
   overflow: hidden;
+  background-size: cover;
+  background-position: center center;
 }

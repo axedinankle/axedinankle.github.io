@@ -97,13 +97,26 @@ jQuery(function($) {
         // console.log(currentShortest + " | " + $el.height() + " | " + getOriginalHeight($el));
       });
       el.parent().height(currentShortest);
+    },
+
+    setFluidTimeImage : function(el) {
+      el.each(function() {
+        var $el = $(this);
+        var $img = $el.find("img");
+        var src = $img.attr("src");
+        $el.css("background-image", "url('" + src + "')");
+        $img.css("opacity", "0");
+        console.log("src: " + src);
+      });
+      
     }
     
   };
 
   
-  $(document).ready(function() {
+  $(window).load(function() {
     // andrewperry.init();
+    andrewperry.setFluidTimeImage($(".tile-thumb"));
     andrewperry.equalHeight($(".tile-thumb img"));
   });
 
