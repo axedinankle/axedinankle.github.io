@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Randomness"
-categories: [work]
+categories: [blog]
 tags: [Random, spork]
 published: true
 ---
