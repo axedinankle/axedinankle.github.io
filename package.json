@@ -1,0 +1,50 @@
+{
+  "name": "andrew-perry-site",
+  "version": "1.0.0",
+  "description": "Personal website for Andrew Perry",
+  "main": "index.js",
+  "repository": "git@github.com:axedinankle/axedinankle.github.io.git",
+  "author": "Jay Perry <j@jayperryworks.com>",
+  "license": "MIT",
+  "private": true,
+  "config": {
+    "css_src": "source/assets/stylesheets",
+    "css_dest": ".tmp/assets/stylesheets",
+    "js_src": "source/assets/javascripts",
+    "icons_src": "./source/assets/images/icons/_sprites",
+    "icons_dest": "./source/layouts/partials"
+  },
+  "scripts": {
+    "javascripts:build": "webpack -p --bail --",
+    "javascripts:watch": "webpack --watch -d --",
+    "styles": "node-sass --include-path node_modules --importer node_modules/node-sass-import --output $npm_package_config_css_dest $npm_package_config_css_src --",
+    "styles:autoprefixer": "postcss --use autoprefixer --autoprefixer.browsers '> 5%, ie >= 8' -r $npm_package_config_css_dest/*.css",
+    "styles:compress": "uglifycss $npm_package_config_css_dest/main.css > $npm_package_config_css_dest/main.min.css",
+    "styles:build": "yarn run styles && yarn run styles:autoprefixer && yarn run styles:compress",
+    "styles:watch": "yarn run styles --watch",
+    "icons": "svg-sprite --symbol --symbol-dest $npm_package_config_icons_dest --symbol-sprite 'spritemap.inc' --symbol-inline --symbol-prefix 'icon-%s' $npm_package_config_icons_src/**/*.svg",
+    "dev": "yarn run build && 'yarn run javascripts:watch' & 'yarn run styles:watch'",
+    "build": "yarn run styles:build && yarn run javascripts:build"
+  },
+  "dependencies": {
+    "bourbon": "^4.3.4",
+    "include-media": "^1.4.9",
+    "modularscale-sass": "^3.0.4",
+    "normalize-css": "*",
+    "picturefill": "*"
+  },
+  "devDependencies": {
+    "autoprefixer": "^7.2.3",
+    "babel-core": "^6.4.5",
+    "babel-loader": "^6.2.1",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-react": "^6.3.13",
+    "clean-webpack-plugin": "^0.1.17",
+    "node-sass": "^4.7.2",
+    "node-sass-import": "^1.1.1",
+    "postcss-cli": "^4.1.1",
+    "uglifycss": "^0.0.27",
+    "watch": "^1.0.2",
+    "webpack": "^3.10.0"
+  }
+}

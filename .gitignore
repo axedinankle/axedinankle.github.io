@@ -1,5 +1,5 @@
-_site/
-*.sublime-project
-*.sublime-workspace
-.sass-cache/
-.bundle/
+.bundle
+.cache
+.DS_Store
+.sass-cache
+build/
