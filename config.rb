@@ -21,7 +21,7 @@ page '/*.txt', layout: false
 
 activate :external_pipeline,
     name: :node,
-    command: build? ? 'yarn run build' : 'yarn run start',
+    command: build? ? 'yarn build' : 'yarn dev',
     source: ".tmp/assets",
     latency: 1
 
